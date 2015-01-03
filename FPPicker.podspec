@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
     :tag => 'v4.1.0'
   }
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '6.0'
   s.osx.deployment_target = '10.9'
 
   s.ios.prefix_header_file  = 'Resources-iOS/FPPicker-Prefix.pch'

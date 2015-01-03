@@ -179,7 +179,7 @@
     }
 
     NSData *JSONData = [JSONString dataUsingEncoding:NSUTF8StringEncoding];
-    NSString *base64EncodedPolicy = [JSONData base64EncodedStringWithOptions:0];
+    NSString *base64EncodedPolicy = [JSONData base64Encoding];
 
     return base64EncodedPolicy;
 }
