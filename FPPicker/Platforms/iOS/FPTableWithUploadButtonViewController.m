@@ -185,11 +185,11 @@ static UIColor *ANGRY_COLOR;
 
             if (count == 1)
             {
-                title = @"Upload 1 file";
+                title = @"Import 1 file";
             }
             else
             {
-                title = [NSString stringWithFormat:@"Upload %ld files", (long)count];
+                title = [NSString stringWithFormat:@"Import %ld files", (long)count];
             }
 
             [self.uploadButton setTitle:title
@@ -205,7 +205,7 @@ static UIColor *ANGRY_COLOR;
     [self.uploadButton setTitleColor:HAPPY_COLOR
                             forState:UIControlStateDisabled];
 
-    [self.uploadButton setTitle:@"Uploading files"
+    [self.uploadButton setTitle:@"Importing files"
                        forState:UIControlStateDisabled];
 }
 

@@ -346,7 +346,7 @@ typedef void (^FPLocalUploadAssetProgressBlock)(float progress);
             hud = [MBProgressHUD showHUDAddedTo:self.view
                                        animated:YES];
 
-            hud.labelText = @"Uploading file";
+            hud.labelText = @"Importing file";
             hud.mode = MBProgressHUDModeDeterminate;
         });
 
@@ -433,11 +433,11 @@ typedef void (^FPLocalUploadAssetProgressBlock)(float progress);
 
     if (totalCount == 1)
     {
-        hud.labelText = @"Uploading 1 file";
+        hud.labelText = @"Importing 1 file";
     }
     else
     {
-        hud.labelText = [NSString stringWithFormat:@"Uploading 1 of %ld files", (long)totalCount];
+        hud.labelText = [NSString stringWithFormat:@"Importing 1 of %ld files", (long)totalCount];
     }
 
     FPProgressTracker *progressTracker = [[FPProgressTracker alloc] initWithObjectCount:self.selectedAssets.count];
@@ -463,13 +463,13 @@ typedef void (^FPLocalUploadAssetProgressBlock)(float progress);
 
                 if (results.count >= totalCount)
                 {
-                    hud.labelText = @"Finished uploading";
+                    hud.labelText = @"Finished importing";
 
                     [self finishMultipleUpload:results];
                 }
                 else
                 {
-                    hud.labelText = [NSString stringWithFormat:@"Uploading %ld of %ld files", results.count + 1l, (long)totalCount];
+                    hud.labelText = [NSString stringWithFormat:@"Importing %ld of %ld files", results.count + 1l, (long)totalCount];
                 }
             }
         };
@@ -516,7 +516,7 @@ typedef void (^FPLocalUploadAssetProgressBlock)(float progress);
                 }
                 else
                 {
-                    hud.labelText = [NSString stringWithFormat:@"Uploading %ld of %ld files", (unsigned long)results.count, (long)totalCount];
+                    hud.labelText = [NSString stringWithFormat:@"Importing %ld of %ld files", (unsigned long)results.count, (long)totalCount];
                 }
             }
         };

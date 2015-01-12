@@ -195,7 +195,7 @@
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:picker.view
                                               animated:YES];
 
-    hud.labelText = @"Uploading...";
+    hud.labelText = @"Importing...";
     hud.mode = MBProgressHUDModeDeterminate;
 
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{

@@ -621,13 +621,13 @@ static const CGFloat ROW_HEIGHT = 44.0;
 
                 if (amtProcessed >= totalCount)
                 {
-                    hud.labelText = @"Finished uploading";
+                    hud.labelText = @"Finished importing";
 
                     [self finishMultipleUpload:results];
                 }
                 else
                 {
-                    hud.labelText = [NSString stringWithFormat:@"Downloading %lu of %ld files", (long)amtProcessed + 1, (long)totalCount];
+                    hud.labelText = [NSString stringWithFormat:@"Importing %lu of %ld files", (long)amtProcessed + 1, (long)totalCount];
                 }
 
                 hud.progress = [progressTracker setProgress:1.f

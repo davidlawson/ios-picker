@@ -91,7 +91,7 @@
                                               animated:YES];
 
     hud.mode = MBProgressHUDModeDeterminate;
-    hud.labelText = @"Uploading...";
+    hud.labelText = @"Importing...";
 
     DLog(@"Saving %@%@ to %@", filename, [self getExtensionString], path);
 
