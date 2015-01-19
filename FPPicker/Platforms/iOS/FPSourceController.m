@@ -598,11 +598,11 @@ static const CGFloat ROW_HEIGHT = 44.0;
 
     if (totalCount == 1)
     {
-        hud.labelText = @"Downloading 1 file";
+        hud.labelText = @"Importing 1 file";
     }
     else
     {
-        hud.labelText = [NSString stringWithFormat:@"Downloading 1 of %ld files", (long)totalCount];
+        hud.labelText = [NSString stringWithFormat:@"Importing 1 of %ld files", (long)totalCount];
     }
 
     FPProgressTracker *progressTracker = [[FPProgressTracker alloc] initWithObjectCount:self.selectedObjects.count];
@@ -1087,7 +1087,7 @@ static const CGFloat ROW_HEIGHT = 44.0;
                                        animated:YES];
 
             hud.mode = MBProgressHUDModeDeterminate;
-            hud.labelText = @"Downloading file";
+            hud.labelText = @"Importing file";
         });
 
         FPFetchObjectSuccessBlock successBlock = ^(FPMediaInfo *mediaInfo) {
