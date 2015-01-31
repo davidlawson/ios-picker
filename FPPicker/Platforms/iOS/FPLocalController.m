@@ -444,6 +444,17 @@ typedef void (^FPLocalUploadAssetProgressBlock)(float progress);
 
     for (ALAsset *asset in self.selectedAssets)
     {
+        if (asset.defaultRepresentation == nil)
+        {
+            totalCount--;
+            failedCount++;
+
+            if (totalCount == 0)
+                [self finishMultipleUpload:results];
+
+            continue;
+        }
+
         NSURL *progressKey = asset.defaultRepresentation.url;
 
         // We push all the uploads onto background threads. Now we have to be careful

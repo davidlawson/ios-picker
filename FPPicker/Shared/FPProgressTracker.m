@@ -32,6 +32,12 @@
 
 - (float)setProgress:(float)progress forKey:(id<NSCopying>)key
 {
+    if (key == NULL)
+    {
+        NSLog(@"Key == null!");
+        return [self calculateProgress];
+    }
+
     float clampedProgress = FPCLAMP(progress, 0.0f, 1.0f);
 
     if (progress != clampedProgress)

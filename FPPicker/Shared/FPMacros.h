@@ -28,9 +28,11 @@
 #define NSForceLog(FORMAT, ...) \
     fprintf(stderr, "[Ink Mobile Framework] %s\n", [[NSString stringWithFormat:FORMAT, ## __VA_ARGS__] UTF8String]);
 
-#define NSLog(...)
+#define NSLog(...) \
+    CLS_LOG(__VA_ARGS__);
 
-#define DLog(...)
+#define DLog(fmt, ...) \
+    CLS_LOG((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ## __VA_ARGS__);
 
 #define DTrace(...)
 
