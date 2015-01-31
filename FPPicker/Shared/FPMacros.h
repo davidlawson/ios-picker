@@ -6,34 +6,22 @@
 //  Copyright (c) 2014 Filepicker.io. All rights reserved.
 //
 
+#include "Crashlytics.h"
+
 #define FPCLAMP(x, minimum, maximum) \
     MIN((maximum), MAX((minimum), (x)))
 
 #ifdef DEBUG
 
-#define NSForceLog(...) \
-    NSLog(__VA_ARGS__);
-
-#define NSLog(...) \
-    NSLog(__VA_ARGS__);
-
-#define DLog(fmt, ...) \
-    NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ## __VA_ARGS__);
-
+#define NSForceLog CLS_LOG
+#define DLog CLS_LOG
 #define DTrace(fmt, ...) \
     NSLog((@"TRACE %s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ## __VA_ARGS__);
 
 #else
 
-#define NSForceLog(FORMAT, ...) \
-    fprintf(stderr, "[Ink Mobile Framework] %s\n", [[NSString stringWithFormat:FORMAT, ## __VA_ARGS__] UTF8String]);
-
-#define NSLog(...) \
-    CLS_LOG(__VA_ARGS__);
-
-#define DLog(fmt, ...) \
-    CLS_LOG((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ## __VA_ARGS__);
-
+#define NSForceLog CLS_LOG
+#define DLog CLS_LOG
 #define DTrace(...)
 
 #endif
