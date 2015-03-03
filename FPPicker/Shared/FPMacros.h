@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Filepicker.io. All rights reserved.
 //
 
-#include "Crashlytics.h"
+#include "../../../Crashlytics.framework/Headers/Crashlytics.h"
 
 #define FPCLAMP(x, minimum, maximum) \
     MIN((maximum), MAX((minimum), (x)))
